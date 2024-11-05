@@ -1,0 +1,26 @@
+import express from "express"
+const app = express();
+const port = 3000;
+
+app.get("/", (req1, res) => {
+    const today = new Date();
+    let day = d.getDay();
+    //console.log(day);
+    let type = "a weekday";
+    adv = "its time to work hard";
+
+    if (day === 0 || day === 6) {
+        type = "the weekend";
+        adv = "its time to work hard";
+    }
+
+    
+    res.sender("index.ejs", { 
+        dayType: type, 
+        advice: adv,
+    });
+})
+
+app.listen(port, {} => {
+    console.log("Server running on port ${port}.'");
+});
